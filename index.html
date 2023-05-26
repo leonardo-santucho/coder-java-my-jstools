@@ -4,9 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My JavaScript Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>My toooooool box</title>
 </head>
-<body>
+<!-- <body class="container" onload="onLoad()"> -->
+
+  <body class="container">
+
+  
+    <header>
+        <!-- Titulo -->
+        <div class="col">
+          <div class="row p-3 text-center ">
+            <h1 class="h2 text-body-secondary" id="title">titulo</h1>
+          </div>
+        </div>
+    </header>
+
+
+    <main>
+
+    <button type="button" class="btn btn-secondary" id="buttonLanguage" onclick="change()">ENG</button>
+
+       
+		<!-- <select name="listlanguages" onchange="langSelectChange(this)"> -->
+		</select><br />
+
+
+        <div class="col-md-10 mx-auto col-lg-5 calcular">
+       
+          <form class="p-4 p-md-5 border rounded-3">
+            
+            <!-- Total -->
+            <div class="total form-floating mb-3">
+                <input type="number" class="form-control" id="totalCuenta" placeholder="00.00">
+                <label for="totalCuenta" id="totalCuentaLabel">Total</label>
+            </div>
+
+            <!-- Propina -->
+            <div class="propina">
+                <label for="propinaRango" id="propinaLabel" class="form-label">Propina: <span id="propinaValue"></span></label>
+                <input type="range" class="form-range" min="0" max="100" value="20" step="5" id="propinaRango">
+            </div>
+
+            <!-- Cantidad de personas -->
+            <div class="personas form-floating mb-3">
+                <input type="number" class="form-control" id="cantidadPersonas" placeholder="3">
+                <label for="cantidadPersonas" id="cantidadPersonasLabel">Cantidad de personas</label>
+            </div>
+
+            <!-- Redondeo -->
+            <div class="redondeo checkbox mb-3">
+                <label id="redondeoLabel">
+                    <input type="checkbox" value="check" id="redondeoCheck"> Redondeamos
+                </label>
+            </div>
+      
+            <!-- Button  -->
+            <div class="button">
+              <button onclick="calcular()" class="w-100 btn btn-lg btn-primary" type="submit" id="calcularButton">Calcular</button>
+            </div>
+            
+            <hr class="my-4">
+            <small class="text-body-secondary" id="descripcionCalcular">El redondeo se aplica...</small>
+          </form>
+        </div>
+    </main>
+
+
+    <footer>
+
+      
+    </footer>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/multilang.js"></script>
+		 -->
+    <script src="./js/scripts.js"></script>
+   
+
     
 </body>
 </html>
