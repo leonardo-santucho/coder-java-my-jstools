@@ -1,0 +1,25 @@
+﻿{
+	"en": {
+		"langdesc": "English",
+		"title": "Do we divided?",
+		"totalCuentaLabel": "The bill", 
+		"propinaLabel": "Tip",
+		"cantidadPersonasLabel": "People",
+		"redondeoLabel": "Rounded",
+		"calcularButton": "Calculate",
+		"descripcionCalcular": "The rounded is calculated...",
+		"buttonLanguage": "ESP"
+	},
+	
+	"es": {
+		"langdesc": "Spanish",
+		"title": "Dividimos?",
+		"totalCuentaLabel": "Cuenta",
+		"propinaLabel": "Propina",
+		"redondeoLabel": "Redondeo",
+		"cantidadPersonasLabel": "Cantidad de personas",
+		"calcularButton": "Calcular",
+		"descripcionCalcular": "El redondeo se aplica...",
+		"buttonLanguage": "ESP"
+	}
+}
