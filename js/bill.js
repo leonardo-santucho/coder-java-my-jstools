@@ -73,8 +73,10 @@ class Cuenta {
             // el resultado en el alert porque ser verá muy extenso, y salgo del for.
             if (index === 10) {
                 salida += "...\n"
-                salida += "Persona " + personas + " debe pagar: " + this.resultado;
+                salida += "Persona " + this.personas + " debe pagar: " + this.resultado;
+              
                 break;
+                
             } else {
                 salida += "Persona " + (index + 1) + " debe pagar: " + this.resultado + "\n";
             }
@@ -90,12 +92,52 @@ class Cuenta {
 
 } 
 
-let cantidadPersonas = parseInt(prompt("Ingrese la cantidad de personas:"));
-let totalCuenta = parseFloat(prompt("Ingrese el total del cuenta:"));
-let porcentajePropina = parseFloat(prompt("Indique el porcentaje de propina en %: "));
-let redondeo = 0;
 
-const cuenta = new Cuenta(totalCuenta, cantidadPersonas, porcentajePropina, redondeo);
+function calcular() {
 
-cuenta.calcular();
+    let cantidadPersonas = parseInt(document.getElementById("cantidadPersonas").value);   // parseInt(prompt("Ingrese la cantidad de personas:"));
+    let totalCuenta = parseFloat(document.getElementById("totalCuenta").value);           // parseFloat(prompt("Ingrese el total del cuenta:"));
+    let porcentajePropina = parseInt(document.getElementById("propinaValue").innerHTML);      // parseFloat(prompt("Indique el porcentaje de propina en %: "));
+    let redondeo = 0;
+
+   const cuenta = new Cuenta(totalCuenta, cantidadPersonas, porcentajePropina, redondeo);
+
+   cuenta.calcular();
+
+}
+
+// Slider - Propina 
+let slider = document.getElementById("propinaRango");
+let output = document.getElementById("propinaValue");
+let propinaText = document.getElementById("propinaText");
+
+output.innerHTML = slider.value;
+propinaText.innerHTML = " % - Buena antención";
+
+slider.oninput = function() { 
+    output.innerHTML = this.value;
+  
+    // Descripcion de la propina a partir del valor 
+    switch(parseInt(this.value)) {
+        case 0: 
+            propinaText.innerHTML = " % - Un desastre la atención";
+            break;
+            
+        case 10:
+            propinaText.innerHTML = " % - Buena antención";
+            break;
+            
+        case 20:
+            propinaText.innerHTML = " % - Muy buena antención";
+            break;
+            
+
+        case 30:
+            propinaText.innerHTML = " % - Excelente atención";
+            break;
+            
+        }
+    }
+    
+
 

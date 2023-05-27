@@ -5,27 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     <title>My toooooool box</title>
 </head>
 <!-- <body class="container" onload="onLoad()"> -->
 
-  <body class="container">
+  <body>
 
-  
     <header>
-        <!-- Titulo -->
-        <div class="col">
-          <div class="row p-3 text-center ">
-            <h1 class="h2 text-body-secondary" id="title">titulo</h1>
-          </div>
+
+      <!-- Navegador -->
+      <nav class="navigator">
+        
+        <!-- Button para abrir el sidebar -->
+        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-bars button-sidebar"></i></button>
+
+        <!-- Codigo Bootstrap que muestra el sidebar -->
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu de funcionalidades:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>     
+            </div>
+            <div class="offcanvas-body link-sidebar">
+                <ul>
+                    <li><a href="/index.html" id="navHome">Inicio</a></li>
+                    <li><a href="./pages/portfolio.html" id="navPortfolio">Dividir la cuenta</a></li>
+                    <li><a href="./pages/career.html" id="navCareer">Timer</a></li>
+                    <li><a href="./pages/about-me.html" id="navAbout">Otro</a></li>
+                    <li><a href="./pages/contact-me.html" id="navContactMe">Otro</a></li>
+                </ul>
+                <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
+
         </div>
+
+        <!-- Titulo de la funcionalidad actual -->
+        <div class="title-actual">
+            <p>Dividir la cuenta</p>
+        </div>
+
+        <!-- Button idioma y darkmode -->
+        <div>
+            <button class="btn btn-primary" type="button">ENG</button>
+            <button class="btn btn-primary" type="button">...</button>
+        </div>
+
+      </nav>
+
     </header>
 
 
-    <main>
+    <main class="container">
 
-    <button type="button" class="btn btn-secondary" id="buttonLanguage" onclick="change()">ENG</button>
+    <!-- <button type="button" class="btn btn-secondary" id="buttonLanguage" onclick="change()">ENG</button> -->
 
        
 		<!-- <select name="listlanguages" onchange="langSelectChange(this)"> -->
@@ -44,8 +77,8 @@
 
             <!-- Propina -->
             <div class="propina">
-                <label for="propinaRango" id="propinaLabel" class="form-label">Propina: <span id="propinaValue"></span></label>
-                <input type="range" class="form-range" min="0" max="100" value="20" step="5" id="propinaRango">
+                <label for="propinaRango" id="propinaLabel" class="form-label">Propina: <span id="propinaValue"></span><span id="propinaText"></span></label>
+                <input type="range" class="form-range" min="0" max="30" value="10" step="10" id="propinaRango">
             </div>
 
             <!-- Cantidad de personas -->
@@ -78,9 +111,9 @@
       
     </footer>
     
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/multilang.js"></script>
-		 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="./js/multilang.js"></script> -->
+		
     <script src="./js/bill.js"></script>
    
 

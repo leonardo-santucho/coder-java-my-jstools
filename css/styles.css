@@ -4,6 +4,32 @@
   box-sizing: border-box;
 }
 
+.navigator {
+  background-color: darkcyan;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigator .button-sidebar {
+  display: block;
+  font-size: 32px;
+  margin: 10px;
+  color: white;
+}
+.navigator .link-sidebar ul {
+  list-style: none;
+}
+.navigator .link-sidebar ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.navigator .title-actual {
+  display: flex;
+  color: white;
+}
+
 .calcular form .total {
   color: blue;
 }
