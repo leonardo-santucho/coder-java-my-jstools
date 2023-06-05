@@ -2,11 +2,11 @@
 
 class Cuenta {
 
-    constructor (total, personas, propina, redondear) {
+    constructor (total, personas, propina, mostrarDecimales) {
         this.total = total;
         this.personas = personas;
         this.propina = propina;
-        this.redondear = redondear;
+        this.mostrarDecimales = mostrarDecimales;
         this.totalPropina = 0;
         this.totalCuentaConPropina = 0;
         this.resultado = 0;
@@ -41,11 +41,20 @@ class Cuenta {
     calcular() {
 
         if (this.validar()) {
-            
+
             this.totalPropina = this.total * (this.propina/100);
             this.totalCuentaConPropina = this.total + this.totalPropina;
-            this.resultado = this.totalCuentaConPropina / this.personas;
+            this.resultado = Math.ceil((this.totalCuentaConPropina / this.personas)); 
 
+            if (this.mostrarDecimales) {
+             
+                this.resultado = this.resultado.toFixed(2);
+
+            }
+            else {
+                this.resultado = this.resultado.toFixed(0);
+            }
+           
             this.mostrarResultado();
         }        
 
@@ -73,12 +82,12 @@ class Cuenta {
             // el resultado en el alert porque ser verá muy extenso, y salgo del for.
             if (index === 10) {
                 salida += "...\n"
-                salida += "Persona " + this.personas + " debe pagar: " + this.resultado;
+                salida += "Persona " + this.personas + " debe pagar: AR$" + this.resultado;
               
                 break;
                 
             } else {
-                salida += "Persona " + (index + 1) + " debe pagar: " + this.resultado + "\n";
+                salida += "Persona " + (index + 1) + " debe pagar: AR$" + this.resultado + "\n";
             }
 
 
@@ -98,11 +107,11 @@ function calcular() {
     let cantidadPersonas = parseInt(document.getElementById("cantidadPersonas").value);   // parseInt(prompt("Ingrese la cantidad de personas:"));
     let totalCuenta = parseFloat(document.getElementById("totalCuenta").value);           // parseFloat(prompt("Ingrese el total del cuenta:"));
     let porcentajePropina = parseInt(document.getElementById("propinaValue").innerHTML);      // parseFloat(prompt("Indique el porcentaje de propina en %: "));
-    let redondeo = 0;
+    let mostrarDecimales = document.getElementById("redondeoCheck").checked;
 
-   const cuenta = new Cuenta(totalCuenta, cantidadPersonas, porcentajePropina, redondeo);
+    const cuenta = new Cuenta(totalCuenta, cantidadPersonas, porcentajePropina, mostrarDecimales);
 
-   cuenta.calcular();
+    cuenta.calcular();
 
 }
 
@@ -131,7 +140,6 @@ slider.oninput = function() {
             propinaText.innerHTML = " % - Muy buena antención";
             break;
             
-
         case 30:
             propinaText.innerHTML = " % - Excelente atención";
             break;

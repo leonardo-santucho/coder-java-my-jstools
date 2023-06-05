@@ -1,21 +1,19 @@
 .calcular {
     form { 
-        .total {
-            color: blue;
+
+        margin-top: 10px;
+
+        .redondeo, .propina {
+    
+            text-align: left;
         }
 
-        .propina {
-            color: darkslategray;
-        }
-
-        .personas {
-            color: blueviolet;
-        }
-
-        .redondeo {
-            color: blue;
+        .total, .personas{
+            color: gray;
         }
 
     }
 
 }
+
+

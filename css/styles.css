@@ -4,43 +4,50 @@
   box-sizing: border-box;
 }
 
-.navigator {
-  background-color: darkcyan;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.navigator .button-sidebar {
-  display: block;
-  font-size: 32px;
-  margin: 10px;
-  color: white;
-}
-.navigator .link-sidebar ul {
-  list-style: none;
-}
-.navigator .link-sidebar ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 16px;
-  font-family: sans-serif;
-}
-.navigator .title-actual {
-  display: flex;
-  color: white;
+body .cover-container {
+  max-width: 42em;
+} /*
+ * Globals
+ */
+/* Custom default button */
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
 }
 
-.calcular form .total {
-  color: blue;
+.nav-masthead .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 0.25rem solid transparent;
 }
-.calcular form .propina {
-  color: darkslategray;
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
 }
-.calcular form .personas {
-  color: blueviolet;
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
 }
-.calcular form .redondeo {
-  color: blue;
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.calcular form {
+  margin-top: 10px;
+}
+.calcular form .redondeo, .calcular form .propina {
+  text-align: left;
+}
+.calcular form .total, .calcular form .personas {
+  color: gray;
+}
+
+.presentacion {
+  margin-top: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */
