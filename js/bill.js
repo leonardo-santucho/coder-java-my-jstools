@@ -1,4 +1,20 @@
 
+const mostrarMensajeErrorValidar = (texto) => {
+    Toastify({
+        text: texto,
+        duration: 3000,
+        // destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "gray",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+  }
 
 class Cuenta {
 
@@ -13,26 +29,24 @@ class Cuenta {
 
     }
 
+ 
 
     // Valido los datos ingresados
     validar() {
-
-        if (!((typeof this.personas == "number") && (this.personas > 0))) {
-            alert("El valor de la Cantidad de Personas ingresada no es un número valido.");
-            return false;
-        }
-
     
         if (!((typeof this.total == "number") && (this.total > 0))) {
-            alert("El valor de Total de la Cuenta ingresada no es un número valido.");
+            mostrarMensajeErrorValidar("El valor de Total de la Cuenta ingresada no es un número valido.")
+            document.getElementById("totalCuenta").focus();
             return false;
         }
     
-        if (!((typeof this.propina == "number") && (this.propina >= 0))) {
-            alert("El valor de la Propina no es un número valido.");
+
+        if (!((typeof this.personas == "number") && (this.personas > 0))) {
+            mostrarMensajeErrorValidar("El valor de la Cantidad de Personas ingresada no es un número valido.")
+            document.getElementById("cantidadPersonas").focus();
             return false;
         }
-    
+
         return true;
 
     }
@@ -63,41 +77,29 @@ class Cuenta {
     // Muestro resultado en un alert y console
     mostrarResultado() {
 
-        console.log(this);
 
-        let salida = "";
+        let divResultado = document.getElementById("resultado");
 
-        salida += "Cantidad de personas: " + this.personas + "\n";
-        salida += "Total del cuenta AR$: " + this.total + "\n";
-        salida += "% de propina: " + this.propina + "%\n";
-        salida += "Total de propina AR$: " + this.totalPropina + "\n"
-        salida += "Total de la cuenta con propina AR$: " + this.totalCuentaConPropina + "\n";
-        salida += "--------------------------------------------------------------------\n"
-
-        for (let index = 0; index < this.personas; index++) {
-
-            
-            
-            // Si la cantidad de personas es mayor 10 personas aviso que no puedo mostrar todo 
-            // el resultado en el alert porque ser verá muy extenso, y salgo del for.
-            if (index === 10) {
-                salida += "...\n"
-                salida += "Persona " + this.personas + " debe pagar: AR$" + this.resultado;
-              
-                break;
-                
-            } else {
-                salida += "Persona " + (index + 1) + " debe pagar: AR$" + this.resultado + "\n";
-            }
+        // Limpio el resultado
+        divResultado.innerHTML = "";
 
 
-            
-        }
+        let div = document.createElement("div");
+        div.innerHTML = `
+            <p><strong>Cantidad de Personas: </strong>${this.personas}<p>
+            <p><strong>Total del cuenta AR$: </strong>${this.total}<p>
+            <p><strong>"% de propina: </strong>: ${this.propina}<p>
+            <p><strong>Total de propina AR$: </strong>${this.totalPropina}<p>
+            <p><strong>Total de la cuenta con propina AR$: </strong>${this.totalCuentaConPropina}<p>
+            <p><strong>Cada debe pagar: AR$: </strong>${this.resultado}<p>
+        `;
 
-        alert(salida);
-   
+        divResultado.appendChild(div)
+
 
     }
+
+    
 
 } 
 
@@ -147,5 +149,6 @@ slider.oninput = function() {
         }
     }
     
+
 
 
