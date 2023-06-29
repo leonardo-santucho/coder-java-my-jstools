@@ -78,7 +78,13 @@ function mostrarResutlado() {
         let personajesEcontrados =  new StarWars().buscarPersonajes(searchText.value)
 
         if (personajesEcontrados.length == 0) {
-            alert("No se encontraron personajes");
+            Swal.fire({
+                icon: 'info',
+                title: 'Oops...',
+                text: 'No se econtraron personajes!'
+    
+              })
+    
             return
         }
 

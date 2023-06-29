@@ -1,0 +1,18 @@
+﻿{
+	"EN": {
+
+		"dashboardDescripcion": "Here you have some features which were developed with JavaScript language thanks to everything learned in the Development Full Stack career of the CoderHouse", 
+		"buttonExplorarFuncionalidades": "Have a look!",
+		"linkCoder": "Coderhouse",
+		"buttonDark": "Dark"
+		
+	},
+	
+	"ES": {
+
+		"dashboardDescripcion": "Aquí encontrarás un serie de funcionalidades desarrolladas con JavaScript de acuerdo a lo que aprendendí en el curso de Desarrollo Full Stack en CoderHouse.",
+		"buttonExplorarFuncionalidades": "Explorar funcionalidades!",
+		"linkCoder": "Coderhouse",
+		"buttonDark": "Oscuro"
+	}
+}
