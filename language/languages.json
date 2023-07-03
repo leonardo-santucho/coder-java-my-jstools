@@ -1,18 +1,42 @@
 ﻿{
 	"EN": {
-
+		"navbarTitulo": "JS mini-projects",
+		"navbarContacto": "Contact",
+		"navbarLinkedIn": "Following on LinkedIn",
+		"navbarInstagram": "Like on Instagram",
+		"navbarEmail": "Send an email",
+		"navbarDescripcion": "This page was developed by Bootstrap v5, development of CSS with SASS, external library like font-awesome, tostify, luxon and son. For JavaScript was used cycles, functions, arrays, objetcs, DOM, fetch and more.",
 		"dashboardDescripcion": "Here you have some features which were developed with JavaScript language thanks to everything learned in the Development Full Stack career of the CoderHouse", 
 		"buttonExplorarFuncionalidades": "Have a look!",
 		"linkCoder": "Coderhouse",
+		"compartirCuentaDescripcion": "If you have to share the bill and you want to know how much does you must to pay, look at it! Tip calculator included! Uses: cycles, functions and toastify library.",
+		"buscarStarWarsDecripcion": "If you want to know Star Wars's characters find it here and look their pictures. Uses: objetcts, arrayas, addEventListener, KeyPress, DOM, Sweet Alert Library",
+		"feriadosDescripcion": "Do you know when will be the next holiday or some important days? Click here and you can figure out. Uses: arrayas, objects, Luxon Library.",
+		"multidiomaDescripcion": "You can see this page in English or Spanish languages. Try it doing click below or on the button of the page bottom. Uses: fetch and JSON",
+		"footerDescripcion": "This site was developed by Leonardo Santucho © 2023 copyright. ",
+		"footerVisita": "Visit my GitHub to see the project's code, here you will find another works.",
+		"buttonMostrar": "Show",
 		"buttonDark": "Dark"
 		
 	},
 	
 	"ES": {
-
+		"navbarTitulo": "JS mini-proyectos",
+		"navbarContacto": "Contacto",
+		"navbarLinkedIn": "Sigueme en LinkedIn",
+		"navbarInstagram": "Like on Instagram",
+		"navbarEmail": "Enviame un mail",
+		"navbarDescripcion": "Esta página fue desarrolada con Bootstrap v5, programación de CSS con SASS, librerias externas como font-awesome, toastify, luxon y más. Para JavaScript se utilizaron ciclos, funciones, arrays, objetos, DOM, eventos y mucho más.",
 		"dashboardDescripcion": "Aquí encontrarás un serie de funcionalidades desarrolladas con JavaScript de acuerdo a lo que aprendendí en el curso de Desarrollo Full Stack en CoderHouse.",
 		"buttonExplorarFuncionalidades": "Explorar funcionalidades!",
 		"linkCoder": "Coderhouse",
+		"compartirCuentaDescripcion": "Si van a compartir la cuenta y quieren saber cuanto debe pagar cada uno, mirá esto! Incluye calculo de propina! Uso de: ciclos, funciones, libreria toastify",
+		"buscarStarWarsDecripcion": "Si queres conocer los personas de Star Wars buscalos aca y mira sus imagenes. Uso de: objetos, arrays, addEventListener, DOM, libreria sweet alert",
+		"multidiomaDescripcion": "Esta pagina web puedes verla en Ingles o Español. Itentalo haciendo click debajo o en la parte superior de la pagina. Uso de: fetch, JSON.",
+		"feriadosDescripcion": "Quieres saber cuando es el proximo feriado o las fechas mas importantes? Hace click acá y descubrilo. Uso de: arrays, objects, Libreria Luxon",
+		"footerDescripcion": "Este sitio fue desarrollado por Leonardo Santucho © 2023 derechos reservados.",
+		"footerVisita": "Visitá mi GitHub para ver el codigo del proyecto, allí encontrarás tambien otros trabajos.",
+		"buttonMostrar": "Mostrar",
 		"buttonDark": "Oscuro"
 	}
 }

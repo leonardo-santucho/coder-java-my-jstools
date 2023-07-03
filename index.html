@@ -75,15 +75,15 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <h4>JS Dashboard</h4>
-              <p class="text-body-secondary">Esta página fue desarrolada con Bootstrap v5, programación de CSS con SASS, librerias externas como font-awesome, toastify, luxon y más. Para JavaScript se utilizaron ciclos, funciones, arrays, objetos, DOM, eventos y mucho más.</p>
+              <h4 id="navbarTitulo">JS Dashboard</h4>
+              <p id="navbarDescripcion" class="text-body-secondary">Esta página fue desarrolada con Bootstrap v5, programación de CSS con SASS, librerias externas como font-awesome, toastify, luxon y más. Para JavaScript se utilizaron ciclos, funciones, arrays, objetos, DOM, eventos y mucho más.</p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
-              <h4>Contacto</h4>
+              <h4 id="navbarContacto">Contacto</h4>
               <ul class="list-unstyled">
-                <li><a href="https://www.linkedin.com/in/leosantucho/" target="_blank" class="text-white">Siguemé en LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/leosantucho/" target="_blank" class="text-white">Like en Instagram</a></li>
-                <li><a href="mailto:leosantucho@gmail.com" class="text-white">Enviame un mail</a></li>
+                <li><a id="navbarLinkedIn" href="https://www.linkedin.com/in/leosantucho/" target="_blank" class="text-white">Siguemé en LinkedIn</a></li>
+                <li><a id="navbarInstagram" href="https://www.instagram.com/leosantucho/" target="_blank" class="text-white">Like en Instagram</a></li>
+                <li><a id="navbarEmail" href="mailto:leosantucho@gmail.com" class="text-white">Enviame un mail</a></li>
               </ul>
             </div>
           </div>
@@ -93,7 +93,7 @@
         <div class="container">
           <a href="#" class="navbar-brand d-flex align-items-center">
             <i class="fa-brands fa-square-js icon-javascript"></i>
-            <strong>Dashboard</strong>
+            <strong id="navbarTitulo">Dashboard</strong>
           </a>
          
 
@@ -115,7 +115,7 @@
       <section class="py-5 text-center container">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">JS Dashboard</h1>
+            <h1 id="navbarTitulo" class="fw-light">JS Dashboard</h1>
             <p id="dashboardDescripcion" class="lead text-body-secondary">Aquí encontrarás un serie de funcionalidades desarrolladas con JavaScript de acuerdo a lo aprendendi el en curso de Desarrollo Full Stacke en <a class="link-opacity-75-hover" href="https://www.coderhouse.com/" target="_blank">Coderhouse</a>.</p>
             <p>
               <a id="buttonExplorarFuncionalidades" href="#cards" class="btn btn-primary my-2">Explorar funcionalidades</a>
@@ -137,9 +137,9 @@
                   <img src="./multimedia/img/bill.jpg" class="card-img-top" alt="factura compartida">
                 </a>
                 <div class="card-body">
-                  <p class="card-text">Sabe cuanto tiene que pagar cada persona cuando vamos a compartir los gastos. Uso de: ciclos, funciones, libreria toastify</p>
+                  <p id="compartirCuentaDescripcion" class="card-text">Sabe cuanto tiene que pagar cada persona cuando vamos a compartir los gastos. Uso de: ciclos, funciones, libreria toastify</p>
                   <div class="d-flex justify-content-between align-items-center">
-                      <a type="button" class="btn btn-sm btn-outline-secondary" href="./pages/billshare.html">Mostrar</a>
+                      <a id="buttonMostrar" type="button" class="btn btn-sm btn-outline-secondary" href="./pages/billshare.html">Mostrar</a>
                   </div>
                 </div>
              
@@ -153,9 +153,9 @@
                   <img src="./multimedia/img/card-starwars.jpg" class="card-img-top" alt="...">
                 </a>
                 <div class="card-body">
-                  <p class="card-text">Buscar personaje de Star Wars. Uso de: objetos, arrays, addEventListener, DOM, libreria sweet alert</p>
+                  <p id="buscarStarWarsDecripcion" class="card-text">Buscar personaje de Star Wars. Uso de: objetos, arrays, addEventListener, DOM, libreria sweet alert</p>
                   <div class="d-flex justify-content-between align-items-center">
-                      <a type="button" class="btn btn-sm btn-outline-secondary" href="./pages/starwars.html">Mostrar</a>
+                      <a id="buttonMostrar" type="button" class="btn btn-sm btn-outline-secondary" href="./pages/starwars.html">Mostrar</a>
                   </div>
                 </div>
               </div>
@@ -167,9 +167,9 @@
                   <img src="./multimedia/img/card-calendar.jpg" class="card-img-top" alt="...">
                 </a>
                 <div class="card-body">
-                  <p class="card-text">Conocer el proximo feriado, calcualo de fechas importantes, horas de otras ciudades. Uso de: libreria luxon.</p>
+                  <p id="feriadosDescripcion" lass="card-text">Conocer el proximo feriado, calcualo de fechas importantes, horas de otras ciudades. Uso de: libreria luxon.</p>
                   <div class="d-flex justify-content-between align-items-center">
-                      <a type="button" class="btn btn-sm btn-outline-secondary" href="./pages/calendar.html">Mostrar</a>
+                      <a id="buttonMostrar" type="button" class="btn btn-sm btn-outline-secondary" href="./pages/calendar.html">Mostrar</a>
                   </div>
                 </div>
               </div>
@@ -178,15 +178,13 @@
             <!-- proximamente -->
             <div class="col">
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <img src="./multimedia/img/card-language.jpg" class="card-img-top" alt="card-language">
                 <div class="card-body">
-                  <p class="card-text">APIS.</p>
+                  <p id="multidiomaDescripcion" class="card-text">Esta pagina web puedes verla en Ingles o Español. Itentalo haciendo click debajo o en la parte superior de la pagina. Uso de: fetch, JSON.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <button id="buttonMostrar" type="button" class="btn btn-sm btn-outline-secondary" onclick="cargarIdioma()">Mostrar</button>
                     </div>
-                    <small class="text-body-secondary">9 mins</small>
                   </div>
                 </div>
               </div>
@@ -279,8 +277,8 @@
           
           <a href="#"><i class="fa-solid fa-circle-chevron-up fa-bounce icon-up"></i></a>
         </p>
-        <p class="mb-1">Este sitio fue desarrollado por Leonardo Santucho &copy; 2023 copyright. </p>
-        <p class="mb-0">Visitá mi <a href="https://github.com/leosantuchogit" target="_blank">GitHub</a> para ver el codigo del proyecto, allí encontrarás tambien otros trabajos.</p>
+        <p id="footerDescripcion" class="mb-1">Este sitio fue desarrollado por Leonardo Santucho &copy; 2023 copyright. </p>
+        <p id="footerVisita" class="mb-0">Visitá mi <a href="https://github.com/leosantuchogit" target="_blank">GitHub</a> para ver el codigo del proyecto, allí encontrarás tambien otros trabajos.</p>
       </div>
     </footer>
 

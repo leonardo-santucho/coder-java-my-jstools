@@ -64,10 +64,7 @@ function cambiarIdioma() {
         // Si el elemento tiene id realizo el cambio de idioma
         if (idName != '') {
 
-            // if (idName == "dashboardDescripcion") {
-                // console.log(allNodes[i].textContent);
-                // console.log(this.obtenerFrase(idName));
-                // console.log("cambiar idioma obtener frase " + multiIdioma.obtenerFrase(idName));
+           
 
                 let frase = this.obtenerFrase(idName) 
                 
@@ -77,7 +74,7 @@ function cambiarIdioma() {
                 }
                 
             
-            // }
+          
                 
 
 
