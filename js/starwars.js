@@ -6,40 +6,77 @@ let searchButton = document.getElementById("searchButton");
 
 // Objeto StarWars
 class StarWars {
-    constructor () {
-        this.CantidadDePeliculas = 10;
-        this.personajes = [
-            {ID:1, name:"Yoda", description:"Uno de los más renombrados y poderosos maestros Jedi durante toda la historia de la Galaxia, y uno de los pocos Jedis de la República Galáctica en sobrevivir hasta la Guerra Civil Galáctica", universo:"Extendido", imagen:"../multimedia/img/starwars/yoda.jpg"},
-            {ID:1, name:"Darth Vader", description:"Anakin Skywalker, más tarde Darth Vader, se centra en su conocimiento de la Fuerza, su caída al lado Oscuro y, finalmente, su redención y muerte.", universo:"Extendido", imagen:"../multimedia/img/starwars/darthvader.jpg"},
-            {ID:1, name:"Leia Organa", description:"La Princesa Leia Organa de Alderaan es un personaje de ficción de la saga Star Wars. Es hija de la senadora Padmé Amidala y del Caballero Jedi Anakin Skywalker", universo:"Extendido", imagen:"../multimedia/img/starwars/leiaorgana.jpg"},
-            {ID:1, name:"Obi-Wan Kenobi", description:"maestro Jedi Obi-Wan Kenobi debe lidiar con las consecuencias de su mayor derrota: la pérdida de su amigo y aprendiz, Anakin Skywalker, a manos del lado oscuro.", universo:"Extendido", imagen:"../multimedia/img/starwars/obiwan.jpg"},
-            {ID:1, name:"Han Solo", description:"Han Solo es un personaje de ficción y uno de los protagonistas de la saga Star Wars. Fue interpretado por Harrison Ford.", universo:"Extendido", imagen:"../multimedia/img/starwars/hansolo.jpg"},
-            {ID:1, name:"Chewbacca", description:"Chewbacca es un personaje del universo ficticio de Star Wars. Es un wookiee, un bípedo alto, peludo y robusto, especie inteligente del planeta Kashyyyk.", universo:"Extendido", imagen:"../multimedia/img/starwars/chewbacca.jpg"},
-            {ID:1, name:"Darth Maul", description:"Darth Maul, también conocido simplemente como Maul, es un personaje de la franquicia Star Wars", universo:"Extendido", imagen:"../multimedia/img/starwars/darthmaul.jpg"},
-            {ID:1, name:"R2-D2", description:"R2-D2 es un personaje de ficción del Universo de Star Wars. Es un droide astromecánico, contraparte y amigo de C-3PO", universo:"Extendido, Whoniverse", imagen:"../multimedia/img/starwars/r2d2.jpg"},
-            {ID:1, name:"Jabba", description:"Jabba el Hutt es un personaje ficticio de la serie Star Wars. Apareció por primera vez en la película Star Wars.", universo:"Extendido", imagen:"../multimedia/img/starwars/jabba.jpeg"},
-            {ID:1, name:"C-3P0", description:"C-3PO es un personaje ficticio del universo de la Guerra de las Galaxias. Se trata de un androide, diseñado para llevar a cabo tareas de etiqueta y protocolo al servicio de los humanos, para lo que domina seis millones de formas de comunicación.", universo:"Extendido", imagen:"../multimedia/img/starwars/c3po.jpg"}
-        
-        ]    
-        this.cantidadDePersonajes = this.personajes.length;
-        this.primeraPelicula = 1979;
-        this.ultimaPelicula = 2015;
-
-    }
-
-    buscarPersonajes(search) {
-    
-        console.log("Texto buscado: " + search);
    
-        let result = this.personajes.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
-        
-        return result;
 
+    obtenerPersonaje = async (search) => {
+
+        try {
+    
+            let divResultado = document.getElementById("resultado");
+            let innerHTML = "";
+    
+            // Limpio el resultado
+            divResultado.innerHTML = "";
+    
+            let url = "https://swapi.dev/api/people/?search=" + search
+
+    
+            const respuesta = await fetch(url);
+            const datos = await respuesta.json();
+            const array = datos.results;
+
+            if (datos.count == 0) {
+
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Oops...',
+                        text: 'No se econtraron personajes!'
+        
+                      })
+        
+                    return
+                
+            }
+    
+    
+            if (Array.isArray(array)) {
+                array.forEach((item) => {
+                    // console.log(item);
+                    // console.log(item.name);
+    
+                    let div = document.createElement("div");
+                    div.className = "mb-3 text-center";
+
+                    
+                    innerHTML = `<hr class="my-4">
+                        <h3>${item.name}</h3>
+                        <p class="pt-3"><strong>Género</strong>: ${item.gender}<p>
+                        <p><strong>Color ojos</strong>: ${item.hair_color}<p>
+                        <p><strong>Color piel</strong>: ${item.skin_color}<p>
+                        <p><strong>Altura</strong>: ${item.height}<p>
+                        <p><strong>Peso</strong>: ${item.mass}<p>
+                    `;
+    
+                   
+                    div.innerHTML = innerHTML;
+       
+        
+                    divResultado.appendChild(div)
+                });
+    
+            } else {
+                console.error("Los datos obtenidos no son un arrreglo");
+            }
+    
+    
+        } catch (error) {
+            console.error(error);
+        }
+    
+    
     }
 
 
-
-    
 }
 
 
@@ -56,7 +93,7 @@ function validarFormulario(){
 
         searchText.focus();
         return false;
-        
+
     }
 
     return true;
@@ -64,54 +101,12 @@ function validarFormulario(){
 
 function mostrarResutlado() {
 
-    
     if (validarFormulario()) {
+        let sw = new StarWars();
+        sw.obtenerPersonaje(searchText.value)
 
-      
-        let divResultado = document.getElementById("resultado");
-
-        // Limpio el resultado
-        divResultado.innerHTML = "";
-
-
-        // Busco los personajes de Star Wars
-        let personajesEcontrados =  new StarWars().buscarPersonajes(searchText.value)
-
-        if (personajesEcontrados.length == 0) {
-            Swal.fire({
-                icon: 'info',
-                title: 'Oops...',
-                text: 'No se econtraron personajes!'
-    
-              })
-    
-            return
-        }
-
-        // Recorro cada personaje encontrado y lo inyecto en el HTML
-  
-        for (const personaje of personajesEcontrados) {
-            
-            let div = document.createElement("div");
-            div.className = "mb-3 text-center";
-            div.innerHTML = `<hr class="my-4">
-                <h3>${personaje.name}</h3>
-                <img src=${personaje.imagen} class="img-fluid rounded" alt="Foto del personaje"</h3>
-                <p class="pt-3">${personaje.description}<p>
-                <p><strong>Universo</strong>: ${personaje.universo}<p>
-            `;
-
-            divResultado.appendChild(div)
-            
-        }
-
-
-    
-
-    
-        
     }
-    
+
 
 
 }
@@ -119,7 +114,7 @@ function mostrarResutlado() {
 
 // Listening... busco al presionar el boton buscar o al presionar "enter" sobre el textbox
 searchButton.onclick = () => {
-    
+
     mostrarResutlado();
 
 
@@ -132,6 +127,10 @@ searchText.addEventListener("keydown", (ev) => {
     }
 
 })
+
+
+
+
 
 
 
