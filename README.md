@@ -2,6 +2,7 @@
 Sitio web con distintas funcionalidades desarrolladas con JavaScript:
 
 Compartir la cuenta: funcionalidad para calcular cuanto tiene que pagar cada uno a partir de monto dado, calculando ademas propina. 
+
 Buscar personaje StarWars: conexion con la api SWAPI para buscar los personajes de Star Wars. 
 Fechas importantes: uso de libreria Luxon para calcular fechas. 
 
