@@ -1,5 +1,5 @@
 
-// Variables
+// Variablesss
 let searchText = document.getElementById("searchText");
 let searchButton = document.getElementById("searchButton");
 
