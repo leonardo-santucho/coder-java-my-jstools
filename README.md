@@ -10,6 +10,6 @@ Multidioma: la home del sitio puede verse en Español o Ingles, aquí se uso fet
 
 Dark-Mode: la funcionalidad de dark-mode NO FUE desarrollada por mí, el codigo lo copie de Bootstrap.
 
-La entrega final se encuentra en la rama "proyectoFinalSantucho", tambien se puede ver el sitio desde: https://leosantuchogit.github.io/my-jstools/ 
+La entrega final se encuentra en la rama "proyectoFinalSantucho", tambien se puede ver el sitio desde: [https://leosantuchogit.github.io/my-jstools/ ](https://leonardo-santucho.github.io/coder-java-my-jstools/)
 
 Developed by Leonardo Santucho.
